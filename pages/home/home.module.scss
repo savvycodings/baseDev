@@ -1,0 +1,54 @@
+.home {
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    min-height: 90vh;
+    margin: auto;
+    font-size: mobile-vw(12px);
+    max-width: mobile-vw(330px);
+
+    @include desktop {
+      min-height: 100vh;
+      font-size: desktop-vw(16px);
+      max-width: desktop-vw(500px);
+    }
+  }
+
+  .canvas {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10vh;
+    touch-action: none;
+    animation: fade-in 01s ease 1s forwards;
+
+    // Carousel container
+    .carouselcontainer {
+      position: relative;
+      border-radius: 20px; // Set border radius
+      overflow: hidden;
+
+      // Yellow border
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 10px solid yellow; // Yellow border
+        box-sizing: border-box;
+        border-radius: inherit;
+        pointer-events: none; // Ensure this layer doesn't interfere with pointer events
+      }
+    }
+  }
+}
